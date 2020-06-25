@@ -1,20 +1,129 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Control Basico Actuadores
     </ion-title>
+    <ion-button slot="start" fill="clear" (click)="back()">
+      <ion-icon style="color:rgb(0, 0, 0); font-size: 25px" name="arrow-round-back"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+
+<ion-content>
+
+
+
+  
+  <div class="ion-padding">
+
+    <h1 text-center>Trabajo de grado</h1>
   </div>
+  <ion-item>
+    <h1>La Humedad actual es: {{humedad}}</h1>
+  </ion-item>
+  <ion-item>
+    <h1>La Temperatura actual es: {{temperatura}}</h1>
+  </ion-item>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 110px;"(click)="boton1()"> Boton1 v1</ion-button>
+      <ion-button style="width: 110px;"(click)="boton2()"> Boton1 v2</ion-button>
+      <ion-button style="width: 110px;"(click)="boton3()"> Boton1 v3</ion-button>
+      <ion-button style="width: 110px;" expand="expand" color="danger" (click)="apagar()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 110px;"  (click)="boton2_1()"> Boton2 v1</ion-button>
+      <ion-button style="width: 110px;" (click)="boton2_2()"> Boton2 v2</ion-button>
+      <ion-button style="width: 110px;" (click)="boton2_3()"> Boton2 v3</ion-button>
+      <ion-button style="width: 110px;" expand="expand" color="danger" (click)="apagar2()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 110px;" (click)="boton3_1()"> Boton3 v1</ion-button>
+      <ion-button style="width: 110px;" (click)="boton3_2()"> Boton3 v2</ion-button>
+      <ion-button style="width: 110px;" (click)="boton3_3()"> Boton3 v3</ion-button>
+      <ion-button style="width: 110px;" expand="expand" color="danger" (click)="apagar3()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 130px;"(click)="botondamp1()"> Damper 1</ion-button>
+      <ion-button style="width: 130px;"expand="expand" color="danger" (click)="botondamp1Apagar()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 130px;"(click)="botondamp2()"> Damper 2</ion-button>
+      <ion-button style="width: 130px;"expand="expand" color="danger" (click)="botondamp2Apagar()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 130px;"(click)="botonFoger()"> Fogger</ion-button>
+      <ion-button style="width: 130px;"expand="expand" color="danger" (click)="botonFogerApagar()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 130px;"(click)="botonCal1()"> Calefactor 1</ion-button>
+      <ion-button style="width: 130px;"expand="expand" color="danger" (click)="botonCal1Apagar()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 130px;"(click)="botonCal2()"> Calefactor 2</ion-button>
+      <ion-button style="width: 130px;"expand="expand" color="danger" (click)="botonCal2Apagar()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div text-center>
+      <ion-button style="width: 130px;"(click)="botonCal3()"> Calefactor 3</ion-button>
+      <ion-button style="width: 130px;"expand="expand" color="danger" (click)="botonCal3Apagar()"> Apagar</ion-button>
+    </div>
+  </ion-card>
+ 
+
+
+   <!-- Graficas para cada sensor --> 
+
+  
+
+
+<canvas baseChart 
+[datasets]="chartData" 
+[labels]="chartLabels" 
+[options]="chartOptions" 
+[colors]="chartColors"
+[legend]="showLegend" 
+[chartType]="chartType">
+</canvas>
+
+<canvas baseChart 
+[datasets]="chartData2" 
+[labels]="chartLabels2" 
+[options]="chartOptions2" 
+[colors]="chartColors2"
+[legend]="showLegend2" 
+[chartType]="chartType">
+</canvas>
+
+<canvas baseChart 
+[datasets]="chartData3" 
+[labels]="chartLabels3" 
+[options]="chartOptions3" 
+[colors]="chartColors2"
+[legend]="showLegend2" 
+[chartType]="chartType">
+</canvas>
+
+
+
+
 </ion-content>

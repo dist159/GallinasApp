@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mapa de calor galpon</ion-title>
+    <ion-button slot="start" fill="clear" (click)="back()">
+      <ion-icon style="color:rgb(0, 0, 0); font-size: 25px" name="arrow-round-back"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="background: rgb(29, 192, 102);border-radius: 3px; ">
+
+    <ion-row>
+      <ion-col >
+        <ion-card [ngStyle]="{'background': colorB_1}">
+
+          <ion-card [ngStyle]="{'background': colorB_2}">
+
+            <ion-card [ngStyle]="{'background': colorB_3}">
+              <ion-card [ngStyle]="{'background': colorB_4}">
+                <h1 text-center style="color: whitesmoke;">1 EXT</h1>
+              </ion-card>
+            </ion-card>
+          </ion-card>
+
+        </ion-card>
+      </ion-col>
+      <ion-col>
+
+
+        <ion-card [ngStyle]="{'background': colorB_1}">
+
+          <ion-card [ngStyle]="{'background': colorB_2}">
+
+            <ion-card [ngStyle]="{'background': colorB_3}">
+              <ion-card [ngStyle]="{'background': colorB_4}">
+                <h1 text-center style="color: whitesmoke;">2 EXT</h1>
+              </ion-card>
+            </ion-card>
+          </ion-card>
+
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+
+    <ion-card style="background: darkcyan;border-radius: 3px; ">
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+            <ion-card [ngStyle]="{'background': colorC_1}">
+
+              <ion-card [ngStyle]="{'background': colorC_2}">
+    
+                <ion-card [ngStyle]="{'background': colorC_3}">
+                  <ion-card [ngStyle]="{'background': colorC_4}">
+                    <h1 text-center style="color: whitesmoke;">1 INT</h1>
+                  </ion-card>
+                </ion-card>
+              </ion-card>
+    
+            </ion-card>
+          </ion-col>
+          <ion-col>
+
+
+            <ion-card [ngStyle]="{'background': colorC_1}">
+
+              <ion-card [ngStyle]="{'background': colorC_2}">
+    
+                <ion-card [ngStyle]="{'background': colorC_3}">
+                  <ion-card [ngStyle]="{'background': colorC_4}">
+                    <h1 text-center style="color: whitesmoke;">2 INT</h1>
+                  </ion-card>
+                </ion-card>
+              </ion-card>
+    
+            </ion-card>
+
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+
+
+
+            <ion-card [ngStyle]="{'background': colorA_1}">
+
+              <ion-card [ngStyle]="{'background': colorA_2}">
+    
+                <ion-card [ngStyle]="{'background': colorA_3}">
+                  <ion-card [ngStyle]="{'background': colorA_4}">
+                    <h1 text-center style="color: whitesmoke;">3 INT</h1>
+                  </ion-card>
+                </ion-card>
+              </ion-card>
+    
+            </ion-card>
+
+
+          </ion-col>
+          <ion-col>
+
+
+
+      
+            <ion-card [ngStyle]="{'background': colorA_1}">
+
+              <ion-card [ngStyle]="{'background': colorA_2}">
+    
+                <ion-card [ngStyle]="{'background': colorA_3}">
+                  <ion-card [ngStyle]="{'background': colorA_4}">
+                    <h1 text-center style="color: whitesmoke;">4 INT</h1>
+                  </ion-card>
+                </ion-card>
+              </ion-card>
+    
+            </ion-card>
+
+
+          </ion-col>
+        </ion-row>
+
+
+
+        
+
+      </ion-grid>
+    </ion-card>
+
+  </ion-card>
+
+</ion-content>

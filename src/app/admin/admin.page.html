@@ -1,0 +1,197 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-family: 'moon';">
+      Gallinas App
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="openEnd()">
+        <ion-icon style="color: rgb(126, 81, 81);" slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- -----------------------------------MENU ---------------------------------->
+<ion-menu side="start" menuId="custom" class="my-custom-menu" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-item style="border: 3px solid rgb(134, 83, 83)(139, 92, 92) !important;--background:black">
+
+        <ion-grid class="grida" style="width: 100%; flex-direction: column">
+          <ion-row>
+            <div class="ion-text-center" style="width: 100%; flex-direction: column">
+              <ion-title *ngIf="UsuarioLocal" style="color: white;">{{UsuarioLocal.nombre}} {{UsuarioLocal.apellido}}
+              </ion-title>
+            </div>
+          </ion-row>
+
+        </ion-grid>
+      </ion-item>
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+
+      <ion-item (click)="control()">
+        <ion-icon name="flash" slot="start"></ion-icon>
+        <ion-label>Control Galpon</ion-label>
+      </ion-item>
+
+      <ion-item (click)="openHeatMap()">
+        <ion-icon name="map" slot="start"></ion-icon>
+        <ion-label>Mapa de calor</ion-label>
+      </ion-item>
+
+      <ion-item (click)="alertas()">
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label>Alertas</ion-label>
+      </ion-item>
+
+      <ion-item (click)="config()">
+        <ion-icon name="settings" slot="start"></ion-icon>
+        <ion-label>Configuración</ion-label>
+      </ion-item>
+
+      <ion-item (click)="ayuda()">
+        <ion-icon name="help" slot="start"></ion-icon>
+        <ion-label>Ayuda</ion-label>
+      </ion-item>
+
+      <ion-item (click)="cerrar()">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <ion-label style="font-family: 'labase3'">Cerrar Sesión</ion-label>
+      </ion-item>
+      <div padding style="background: #ffffff; margin-top: 1%;">
+
+
+
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>
+
+
+<ion-content style="--background: #212852; height: 100%;">
+
+
+  <ion-card
+    style="border: 5px solid #3A7785; background: #212852; margin-top: 10%;margin-bottom: 0%;margin-left: auto;margin-right: auto; width: 60%;">
+    <ion-row style=" margin-top: 10%;margin-bottom: 0%;margin-left: auto;margin-right: auto;" class="ion-text-center">
+      <h1 class="ion-text-center" style="font-family: 'moon';color: white; margin: auto;"> Estado de operacion</h1>
+    </ion-row>
+    <ion-row style=" margin: auto;">
+      <ion-button
+        style="--background: #50D2C2; margin-top: 10%;margin-bottom: 10%;margin-left: auto;margin-right: auto;">
+        <h1 style="font-family: 'moon_bold';color: white;  margin: auto; ">Estable</h1>
+      </ion-button>
+    </ion-row>
+  </ion-card>
+
+  <ion-card
+    style="border: 5px solid #3A7785; background: #212852; margin-top: 10%;margin-bottom: 0%;margin-left: auto;margin-right: auto; width: 80%;">
+    <ion-row>
+      <ion-col>
+        <ion-text class="ion-text-center" style="color: azure;"> <h1>Flujo de aire </h1> </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text class="ion-text-center" style="color: azure;"> <h1 style="color: #50D2C2;">ACTIVO</h1></ion-text>
+      </ion-col>
+      
+    </ion-row>
+    
+<ion-row>
+  <ion-col class="ion-text-center">
+    <img style="margin:auto ;"src="https://hematite.ca/wp-content/uploads/2017/10/Air.png">
+  </ion-col>
+
+  <ion-col class="ion-text-center">
+ <h1 style="font-family: 'moon';margin:auto ;margin-top: 20%;margin-bottom: 20%;color: white;">{{TemperaturaPromedioP}}°C</h1>
+  </ion-col>
+
+  <ion-col class="ion-text-center">
+    <h1 style="font-family: 'moon';margin:auto ;margin-top: 20%;margin-bottom: 20%;color: white;">Vel 2</h1>
+    
+  </ion-col>
+</ion-row>
+
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button  style="margin:auto ;--background: #50D2C2;">
+          <ion-icon name="cog-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <h1 class="ion-text-center" style="font-family: 'moon';margin:auto ;color: white;">Setpoint: </h1>
+      </ion-col>
+      <ion-col>
+        <h1 class="ion-text-center" style="font-family: 'moon';margin:auto ;color: white;"> 15°C</h1>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-card>
+  <ion-card
+    style="border: 5px solid #3A7785; background: #212852; margin-top: 10%;
+    margin-bottom: 0%;margin-left: auto;margin-right: auto; width: 80%;">
+    <!--
+    <div class="circle">
+  <span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+    <div class="pie-wrapper progress-45 style-2">
+      <span class="label">45<span class="smaller">%</span></span>
+      <div class="pie">
+        <div class="left-side half-circle"></div>
+        <div class="right-side half-circle"></div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+
+
+    <div class="pie-wrapper pie-wrapper--solid progress-88">
+      <span class="label">88<span class="smaller">%</span></span>
+    </div>
+  
+ -->
+
+    <ion-row class="ion-text-center">
+      <ion-col class="ion-text-center">
+        <circle-progress [percent]="temperatura" [radius]="50" [outerStrokeWidth]="10" [innerStrokeWidth]="10"
+          [outerStrokeColor]="'#50D2C2'" [innerStrokeColor]="'#3A7785'" [animation]="true" [animationDuration]="400"
+          [subtitle]="'Temperatura'" [units]="'°C'" [titleColor]="'#ffffff'" [outerStrokeGradient] = "true" [space]="-10"
+          [outerStrokeLinecap]="'square'" [unitsColor]="'#ffffff'"></circle-progress>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <circle-progress [percent]="humedad" [radius]="50" [outerStrokeWidth]="10" [innerStrokeWidth]="10"
+          [outerStrokeColor]="'#50D2C2'" [innerStrokeColor]="'#3A7785'" [animation]="true" [animationDuration]="400"
+          [subtitle]="'Humedad'" [unitsColor]="'#ffffff'" [units]="'%'" [titleColor]="'#ffffff'" [space]="-10" [outerStrokeLinecap]="'square'"></circle-progress>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-text-center">
+      <ion-col class="ion-text-center">
+        <circle-progress [percent]="temperatura2" [radius]="50" [outerStrokeWidth]="10" [innerStrokeWidth]="10"
+          [outerStrokeColor]="'#50D2C2'" [innerStrokeColor]="'#3A7785'" [animation]="true" [animationDuration]="400"
+          [subtitle]="'Temperatura'" [units]="'°C'" [titleColor]="'#ffffff'" [outerStrokeGradient] = "true" [space]="-10"
+          [outerStrokeLinecap]="'square'" [unitsColor]="'#ffffff'"></circle-progress>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <circle-progress [percent]="humedad2" [radius]="50" [outerStrokeWidth]="10" [innerStrokeWidth]="10"
+          [outerStrokeColor]="'#50D2C2'" [innerStrokeColor]="'#3A7785'" [animation]="true" [animationDuration]="400"
+          [subtitle]="'Humedad'" [unitsColor]="'#ffffff'" [units]="'%'" [titleColor]="'#ffffff'" [space]="-10" [outerStrokeLinecap]="'square'"></circle-progress>
+      </ion-col>
+    </ion-row>
+    
+  </ion-card>
+
+  
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-family: 'labase2';">Crea tu cuenta</ion-title>
+    <ion-button slot="start" fill="clear" (click)="back()">
+      <ion-icon style="color:rgb(0, 0, 0); font-size: 25px" name="arrow-round-back"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content  >
+    <form  #form="ngForm" >
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            
+            <div padding>
+            
+              <ion-item>
+                <ion-label position="floating">Nombre</ion-label>
+                <ion-input name="name" type="name" ngModel required [(ngModel)]="nombre"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Apellido</ion-label>
+                <ion-input name="name" type="name" ngModel required [(ngModel)]="apellido"></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label position="floating">"tu@email.com"</ion-label>
+                <ion-input name="email" type="email" ngModel required [(ngModel)]="email"></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label position="floating">ID Galpon</ion-label>
+                <ion-input name="namec" type="text" ngModel [(ngModel)]="idgalpon"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input name="password" type="password" ngModel required [(ngModel)]="password"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Confirma tu contraseña</ion-label>
+                <ion-input position="floating" name="confirm" type="password" ngModel required [(ngModel)]="password2"></ion-input>
+              </ion-item>
+              
+            </div>
+
+            <div padding>
+              <p>Al hacer clic en “Registrarte” estas aceptado nuestras políticas de privacidad, términos y condiciones <a
+                href="https://www.labasefraternidad.com/terminos/">Ver terminos y condiciones.</a></p>
+            </div>
+            <div padding>
+              <ion-button (click)="CrearUsuario()" size="large" type="submit" [disabled]="form.invalid" expand="block">
+                Registrarte</ion-button>
+             
+            </div>
+
+            
+            
+            <ion-text color="danger">
+              <h4 >{{error}}</h4>
+            </ion-text>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>
+</ion-content>

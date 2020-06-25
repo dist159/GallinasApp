@@ -1,0 +1,41 @@
+<ion-content>
+
+  <div  class="ion-text-center" text-center style="margin-top: 20%;">
+    <h1 class="ion-text-center"style="font-family: 'letra1'">Gallinas App</h1>
+    <img class="ion-text-center" text-center style="margin-top: 10%; width: 200px; " src="../../assets/imagenes/gallina.png">
+  </div>
+  
+  <form #form="ngForm" >
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-text-center">
+            <h3>Iniciar sesión</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="Tu correo" ngModel required [(ngModel)]="account.email" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Contraseña" ngModel required [(ngModel)]="account.password"></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="submit" (click)="iniciarSesion()"[disabled]="form.invalid" expand="block">iniciar</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <div text-center>
+  <ion-row text-center>
+    <div  style="margin: auto;"text-center>
+      Si no tiene una cuenta, registrese  <a routerLink='/crear-ususario'>aca</a>.
+    </div>
+</ion-row>
+</div>
+
+  
+  
+  </ion-content>
+  
